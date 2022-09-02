@@ -1,43 +1,46 @@
 const newTask = document.getElementById('new-task');
 const add = document.getElementById('add');
-const table = document.getElementById('table');
-const tableBody = document.getElementById('body');
+const list = document.getElementById('list');
+const placeholder = document.getElementById('placeholder');
 
 let id = 0;
 
 add.onclick = () => {
     if(newTask.value) {
-        const tr = document.createElement("tr");
-        const td = document.createElement("td");
+        id === 0 && list.removeChild(placeholder);
+        const li = document.createElement("li");
+        const p = document.createElement('p');
         const done = document.createElement('button');
-        const doneTD = document.createElement('td');
         const remove = document.createElement('button');
-        const removeTD = document.createElement('td');
-        
+        const check = document.createElement('i');
+        const div = document.createElement('div');
+
+        check.classList.add('fa-solid');
+        check.classList.add('fa-check');
+
         remove.onclick = () => {
-            tableBody.removeChild(tr);
+            list.removeChild(li);
         }
         remove.innerText = 'X';
         remove.classList.add('remove');
-        removeTD.appendChild(remove);
 
         done.onclick = () => {
-            if(tr.classList.contains('complete')) {
-                tr.classList.remove('complete');
+            if(li.classList.contains('complete')) {
+                li.classList.remove('complete');
             } else {
-                tr.classList.add('complete');
+                li.classList.add('complete');
             }
         }
-        done.innerText = "Complete";
+        done.appendChild(check);
         done.classList.add('done');
-        doneTD.appendChild(done);
-
-        td.innerText = newTask.value;
-        td.id = id;
-        tr.appendChild(td);
-        tr.appendChild(doneTD);
-        tr.appendChild(removeTD);
-        tableBody.appendChild(tr);
+        
+        p.innerText = newTask.value;
+        li.id = id;
+        div.appendChild(done);
+        div.appendChild(remove);
+        li.appendChild(p);
+        li.appendChild(div);
+        list.appendChild(li);
         newTask.value = '';
         id++;
     }

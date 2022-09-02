@@ -7,22 +7,18 @@
     <title>Hampton Todo</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
+    <script src="https://kit.fontawesome.com/47c2c5aaa1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>Todo List</h1>
-    <table id="table">
-        <thead>
-            <tr>
-                <th>Tasks</th>
-            </tr>
-        </thead>
-        <tbody id="body">
-            <tr>
-                <td>Absolutely nothing to do!</td>
-            </tr>
-        </tbody>
-    </table>
-    <input id="new-task" type="text" />
-    <button id="add">+</button>
+    <ul id="list">
+        <li id="placeholder">
+            Absolutely nothing to do!
+        </li>
+    </ul>
+    <div id="submission">
+        <input id="new-task" type="text" />
+        <button id="add">+</button>
+    </div>
 </body>
 </html>
