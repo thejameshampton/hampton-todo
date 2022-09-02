@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hampton Todo</title>
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
 </head>
 <body>
     <h1>Todo List</h1>
-    <input type="text" />
-    <button>+</button>
-    <table>
+    <table id="table">
         <thead>
             <tr>
                 <th>Tasks</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="body">
             <tr>
                 <td>Absolutely nothing to do!</td>
             </tr>
         </tbody>
     </table>
+    <input id="new-task" type="text" />
+    <button id="add">+</button>
 </body>
 </html>
